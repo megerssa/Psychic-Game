@@ -1,137 +1,61 @@
-//Letter choices available
-var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      Data Types, User Input, Conditional Logic
+    </title>
+  </head>
+  <body>
+    <script type="text/javascript">
 
-//Setting all to zero
-var wins = 0;
-var losses = 0;
-var guesses = 9;
-var guessesLeft = 9;
-var guessedLetters = [];
-var letterToGuess = null;
+      var userName = prompt("What's your name?");
+      var confirmCats = confirm("Do you like cats?");
 
+      var petName = "Meeses";
+      var petType = "Tuxedo Cat";
+      var petAge = 5;
+      var petIsCat = true;
 
+      if (confirmCats) {
+        alert(petName + " " + petType + " " + petAge);
+      }
+      else {
+        alert("You don't get my cat's information");
+      }
 
-//Lets the computer select a random letter from the available choices
-var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+      if (petIsCat) {
+        alert("My pet is a cat");
+      }
+      else {
+        alert("My pet is not a cat");
+      }
 
-//Allows the user 9 guesses
-// guesses = guesses || 9
-var updateGuessesLeft = function() {
-  // Here we are grabbing the HTML element and setting it equal to the guessesLeft. (i.e. guessesLeft will get displayed in HTML)
-  document.querySelector('#guessLeft').innerHTML = "Guesses left: " + guessesLeft;
-};
+      if (petAge !== 7) {
+        alert("My pet is not 7 years old");
+      }
 
-var updateLetterToGuess = function() {
-  this.letterToGuess = this.computerChoices[Math.floor(Math.random() * this.computerChoices.length)];
-};
-var updateGuessesSoFar = function() {
-  
-  document.querySelector('#let').innerHTML = "Your Guesses so far: " + guessedLetters.join(', ');
-};
+      if (petAge === 5) {
+        alert("My pet is 5 years old");
+      }
+      else if (petAge < 5) {
+        alert("My pet is less than 5 years old");
+      }
+      else if (petAge > 5) {
+        alert("My pet is older than 5 years old");
+      }
 
-var reset = function() {
-  totalGuesses = 9;
-  guessesLeft = 9;
-  guessedLetters = [];
+      // document.write() overwrites the entire page. We don't normally use this, but we will today for simplicity
+      document.write("Welcome to our page " + userName);
 
-  updateLetterToGuess();
-  updateGuessesLeft();
-  updateGuessesSoFar();
-}
+      var catAge = prompt("How old is your cat?");
 
-updateLetterToGuess();
-updateGuessesLeft();
+      // Won't work as expected
+      alert(catAge + 2);
 
+      // Works as expected
+      alert(parseInt(catAge) + 2);
 
-
-document.onkeyup = function(event) {
-    guessesLeft--;
-  var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-
-  guessedLetters.push(userGuess);
-  updateGuessesLeft();
-  updateGuessesSoFar();
-
-        if (guessesLeft > 0){
-            if (userGuess == letterToGuess){
-                wins++;
-                document.querySelector('#wins').innerHTML = "Wins: " + wins;
-                alert("Yes, you are psychic!");
-                reset();
-            }
-        }else if(guessesLeft == 0){
-            
-            losses++;
-            document.querySelector('#losses').innerHTML = "Losses: " + losses;
-            alert("Sorry, you're not psychic, maybe try again?");
-             
-            reset();
-        }
-};
-var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-
-var wins = 0;
-var losses = 0;
-var guesses = 9;
-var guessesLeft = 9;
-var guessedLetters = [];
-var letterToGuess = null;
-
-
-
-
-var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-
-var updateGuessesLeft = function() {
- 
-  document.querySelector('#guessLeft').innerHTML = "Guesses left: " + guessesLeft;
-};
-
-var updateLetterToGuess = function() {
-  this.letterToGuess = this.computerChoices[Math.floor(Math.random() * this.computerChoices.length)];
-};
-var updateGuessesSoFar = function() {
-  
-  document.querySelector('#let').innerHTML = "Your Guesses so far: " + guessedLetters.join(', ');
-};
-
-var reset = function() {
-  totalGuesses = 9;
-  guessesLeft = 9;
-  guessedLetters = [];
-
-  updateLetterToGuess();
-  updateGuessesLeft();
-  updateGuessesSoFar();
-}
-
-updateLetterToGuess();
-updateGuessesLeft();
-
-
-document.onkeyup = function(event) {
-    guessesLeft--;
-  var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-
-  guessedLetters.push(userGuess);
-  updateGuessesLeft();
-  updateGuessesSoFar();
-
-        if (guessesLeft > 0){
-            if (userGuess == letterToGuess){
-                wins++;
-                document.querySelector('#wins').innerHTML = "Wins: " + wins;
-                alert("Yes, you are psychic!");
-                reset();
-            }
-        }else if(guessesLeft == 0){
-             
-            losses++;
-            document.querySelector('#losses').innerHTML = "Losses: " + losses;
-            alert("Sorry, you're not psychic, maybe try again?");
-            
-            reset();
-        }
-};
+    </script>
+  </body>
+</html>

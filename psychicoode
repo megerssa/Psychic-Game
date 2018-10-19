@@ -1,0 +1,122 @@
+Pseudocode
+
+var letter = String.fromCharCode(event.keyCode).toLowerCase();
+
+
+Screen example
+
+The Physic Game
+Guess what letter I’m thinking of 
+Wins: O
+Losses:O
+Guesses Left:9
+Your Guesses so Far:
+
+
+———————
+
+
+NEEDS 
+======== LOWERCASE SCRIPT
+
+
+
+Prompts 
+
+
+VAR 
+guess = letter
+Var = True
+
+
+
+
+
+
+
+Guess what letter I’m thinking of 
+4. Computer Prompt “”
+
+
+5. User picks letter
+
+
+6.  Computer determines if 
+YES letter is in puzzle adds letter to puzzle
+ AND   
+7 ppt prompt “ pick a letter”
+
+
+OR
+
+8. NO computer adds letter to “Letters Guessed” section 
+AND 
+subtracts 1 from the “number of guesses remaining” 12-1 
+ 
+
+
+Continues Loop until 
+
+
+9.All letters is puzzle are guessed in puzzle user wins
+AND 
+Computer add WINS +1
+
+or
+
+the number of guesses remaining = 0 user Loses 
+
+
+
+10 Starts over
+
+
+<!-- VARIABLES -->
+“Pick a letter”
+
+
+var = 
+
+
+
+
+ // FUNCTIONS -->
+
+
+
+       Each of the below lines of code is what actually "calls" or "runs" the functions.
+       Without the below code, the functions above are like workers just waiting to be                         called into action.
+
+      // Calling our adder function.
+
+
+// FUNCTIONS EXECUTIONS 
+
+console.log(“——————————“),
+
+
+
+// MAINPROCESS -->
+
+       
+   // Captures keyboard input. Depending on the letter pressed it will "call" (execute) different functions.
+      document.onkeyup = function(even {
+
+
+  // Captures the key press, converts it to lowercase, and saves it to a variable.
+        var letter = String.fromCharCode(event.keyCode).toLowerCase();
+
+
+
+
+WINS
+————> question game activity
+  
+
+
+-NUMBER OF GUESSES REMAINING or Show letters.
+12
+
+
+
+LETTER GUESSED
